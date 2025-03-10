@@ -1,0 +1,18 @@
+<a [routerLink]="'/new'"><button>New Post</button></a>
+
+<div class="MainBlogPage" *ngIf="blogEntries.length > 0">
+  <div class="BlogEntry" *ngFor="let blogEntry of blogEntries">
+    <div class="profilePicAndTitle">
+      <div class="profilePic">
+        <img src="/Jinwoo.webp" />
+      </div>
+      <h1 class="BlogEntryTitle">{{blogEntry.title}}</h1>
+    </div>
+    <p class="BlogEntryDate">{{blogEntry.datetime}}</p>
+    <p class="BlogEntryContent">{{blogEntry.content}}</p>
+  </div>
+</div>
+
+<div class="NoBlogPosts"*ngIf="blogEntries.length < 1">
+  <p>No blog posts to show</p>
+</div>
