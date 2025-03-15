@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const blog = require('./controller/blog-entry-controller');
+const admin = require('./controller/admin-controller');
 const app = express();
 const cors = require('cors')
 require('dotenv').config();
@@ -16,6 +17,8 @@ async function main() {
         app.use(express.json());
 
         app.use('/api', blog);
+
+        app.use('/api', admin)
 
         app.listen(port, () => {
             console.log("Sever listening on port " + port)

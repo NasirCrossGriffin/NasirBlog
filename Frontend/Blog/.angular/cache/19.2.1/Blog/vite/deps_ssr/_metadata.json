@@ -1,55 +1,55 @@
 {
-  "hash": "4a4c949f",
-  "configHash": "b658bc76",
+  "hash": "d01f4ab0",
+  "configHash": "01147d2e",
   "lockfileHash": "51c66f6d",
-  "browserHash": "6f102585",
+  "browserHash": "944de892",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "344a288e",
+      "fileHash": "69968947",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "12ce113a",
+      "fileHash": "58c0a9b3",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "15188e11",
+      "fileHash": "a53bf90e",
       "needsInterop": false
     },
     "@angular/platform-server": {
       "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/platform-server.mjs",
       "file": "@angular_platform-server.js",
-      "fileHash": "047f718e",
+      "fileHash": "b7cc91cf",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "21d0f2c9",
+      "fileHash": "e46504aa",
       "needsInterop": false
     },
     "@angular/ssr": {
       "src": "../../../../../../node_modules/@angular/ssr/fesm2022/ssr.mjs",
       "file": "@angular_ssr.js",
-      "fileHash": "7972c941",
+      "fileHash": "541078ad",
       "needsInterop": false
     },
     "@angular/ssr/node": {
       "src": "../../../../../../node_modules/@angular/ssr/fesm2022/node.mjs",
       "file": "@angular_ssr_node.js",
-      "fileHash": "0f707c6c",
+      "fileHash": "f3f2794a",
       "needsInterop": false
     },
     "express": {
       "src": "../../../../../../node_modules/express/index.js",
       "file": "express.js",
-      "fileHash": "8ef56abb",
+      "fileHash": "b11e419d",
       "needsInterop": true
     }
   },

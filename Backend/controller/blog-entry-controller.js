@@ -5,7 +5,7 @@ const blogEntryModel = require('../models/blog-entry-model');
 
 router.get('/blog', async (req, res) => {
     try {
-        const blogEntries = await blogEntryModel.find();
+        const blogEntries = await blogEntryModel.find().sort({ datetime: -1 });;
         console.log(blogEntries);
         res.status(201).json(blogEntries);
     } catch(err) {
@@ -26,9 +26,9 @@ router.post('/blog', async (req, res) => {
 
         const newBlogEntry = blogEntryModel.insertOne(blogEntry);
 
-        res.status(201).json(newBlogEntry);
+        return res.status(201).json(newBlogEntry);
     } catch( err ) {
-        res.status(400).json({ error: err.message });
+        return res.status(400).json({ error: err.message });
     }
 })
 

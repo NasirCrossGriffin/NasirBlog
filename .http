@@ -6,3 +6,23 @@ Content-Type: application/json
     "content" : "Test content to test the api",
     "date" : "2025-03-08T12:00:00.000Z"
 }
+
+###
+
+POST http://localhost:3000/api/admin
+Content-Type: application/json
+
+{
+    "admin_name" : "NasirGriffin",
+    "password" : "SuperNovaEdge1998%"
+}
+
+###
+
+POST http://localhost:3000/api/admin/authenticate
+Content-Type: application/json
+
+{
+    "admin_name" : "NasirGriffin",
+    "password" : "SuperNovaEdge1998%"
+}

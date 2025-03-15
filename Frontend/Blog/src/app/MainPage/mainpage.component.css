@@ -1,3 +1,8 @@
+@font-face {
+  font-family: GlitchFont;
+  src: url('../../assets/fonts/CfGlitchCityRegular-L1vZ.ttf');
+}
+
 .NoBlogPosts {
   width : 100%;
   height : 100%;
@@ -11,11 +16,13 @@
 
 .MainBlogPage {
   width : 100;;
-  height : 100%;
+  height : fit-content;
   display: flex;
   flex-direction:  column;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 500px;
+  background-color: rgb(27, 27, 27, 1);
 }
 
 .profilePicAndTitle {
@@ -31,9 +38,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width : 100px;
-  height : 100px;
-  margin-right: 30px;
+  width : 150px;
+  height : 150px;
   border-radius: 50%;
   border-color: transparent;
   border-width: 0px;
@@ -48,10 +54,121 @@
 
 .BlogEntry {
   width : 50%;
+  min-height : 500px;
   height : fit-content;
   border-color: rgb(215, 215, 215);
+  background-color: white;
   border-width: 2px;
   border-style: solid;
   padding: 10px 10px 10px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   box-shadow: 12px 12px 12px 12px rgb(0, 0, 0, 0.5);
+}
+
+.BlogEntry p {
+  font-size: 20px;
+}
+
+.BlogEntry h1 {
+  font-size: 40px;
+}
+
+.BlogEntryTitle {
+  margin-left: 30px;
+  width: 70%;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to normal position */
+}
+
+.testObserver {
+  width : 70%;
+  height : 300px;
+  background-color: blue;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+/* Define the CSS animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply the animations to a class */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.off-screen {
+  opacity: 0;
+}
+
+.Welcome {
+  width : 100%;
+  height : 1080px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(27, 27, 27, 1);
+}
+
+.WelcomeContainer {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color : white;
+  animation: fadeInTitle 2.0s both;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.WelcomeContainer h1 {
+  font-size : 100px;
+  font-family: GlitchFont;
+}
+
+.WelcomeContainer h2 {
+  font-size : 30px;
+  font-family: GlitchFont;
 }

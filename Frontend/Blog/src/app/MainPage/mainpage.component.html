@@ -1,17 +1,27 @@
 <a [routerLink]="'/new'"><button>New Post</button></a>
 
-<div class="MainBlogPage" *ngIf="blogEntries.length > 0">
-  <div class="BlogEntry" *ngFor="let blogEntry of blogEntries">
-    <div class="profilePicAndTitle">
-      <div class="profilePic">
-        <img src="/Jinwoo.webp" />
-      </div>
-      <h1 class="BlogEntryTitle">{{blogEntry.title}}</h1>
-    </div>
-    <p class="BlogEntryDate">{{blogEntry.datetime}}</p>
-    <p class="BlogEntryContent">{{blogEntry.content}}</p>
+<div class="Welcome">
+  <div class="WelcomeContainer">
+    <h1>NASIR GRIFFIN</h1>
+    <h2>WELCOME TO MY BLOG</h2>
   </div>
 </div>
+
+<div class="MainBlogPage" *ngIf="blogEntries.length > 0 ">
+  <div class="BlogEntry" *ngFor="let blogEntry of blogEntries; let i = index" id={{i}} #blogEntry>
+    <div class="EntryContent" *ngIf="entryVisibility.length > 0" [ngClass]="{'fade-in': entryVisibility[i].visibility, 'slide-up': entryVisibility[i].visibility, 'off-screen' : !entryVisibility[i].visibility}">
+      <div class="profilePicAndTitle">
+        <div class="profilePic">
+          <img src="/Jinwoo.webp" />
+        </div>
+        <h1 class="BlogEntryTitle">{{blogEntry.title}}</h1>
+      </div>
+      <p class="BlogEntryDate">{{blogEntry.datetime}}</p>
+      <p class="BlogEntryContent">{{blogEntry.content}}</p>
+    </div>
+  </div>
+</div>
+
 
 <div class="NoBlogPosts"*ngIf="blogEntries.length < 1">
   <p>No blog posts to show</p>
