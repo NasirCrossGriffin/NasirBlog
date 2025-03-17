@@ -1,3 +1,4 @@
 Backend/.env
 Backend/node_modules/
 Frontend/Blog/node_modules/
+node_modules

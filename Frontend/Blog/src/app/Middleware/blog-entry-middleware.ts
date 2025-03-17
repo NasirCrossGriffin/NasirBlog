@@ -1,7 +1,12 @@
+import { isDevMode } from "@angular/core";
+
+import { environment } from '../../environments/environment';
+
+const BASE_URL : string =  isDevMode() ? environment.BASE_URL : "";
 
 export const getAllBlogEntries = async () => {
   try {
-    const blogEntriesResponse = await fetch("http://localhost:3000/api/blog ", {
+    const blogEntriesResponse = await fetch(`${BASE_URL}/api/blog`, {
       headers : {"Content-Type" : "application/json"},
       method : "GET",
     })
@@ -20,7 +25,7 @@ export const getAllBlogEntries = async () => {
 export const createBlogEntry = async (title : string, content : string, datetime : Date) => {
   console.log(title, content, datetime)
   try {
-    const blogEntryResponse = await fetch("http://localhost:3000/api/blog", {
+    const blogEntryResponse = await fetch(`${BASE_URL}/api/blog`, {
       headers : {"Content-Type" : "application/json"},
       method : "POST",
       body : JSON.stringify({

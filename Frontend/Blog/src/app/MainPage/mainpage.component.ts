@@ -1,4 +1,4 @@
-import { Component, ViewChildren, ElementRef, ChangeDetectorRef, QueryList, SimpleChanges, Inject, PLATFORM_ID } from "@angular/core";
+import { Component, ViewChildren, ElementRef, ChangeDetectorRef, QueryList, SimpleChanges, Inject, PLATFORM_ID, isDevMode } from "@angular/core";
 import { CommonModule, isPlatformBrowser, ViewportScroller  } from "@angular/common";
 import { createBlogEntry, getAllBlogEntries } from "../Middleware/blog-entry-middleware";
 import { RouterModule } from "@angular/router";
@@ -29,6 +29,8 @@ export class MainPageComponent {
     this.cdr.detectChanges();
 
     console.log(this.isBrowser)
+
+    console.log("angular devMode is " + isDevMode())
   }
 
   ngAfterViewInit() {

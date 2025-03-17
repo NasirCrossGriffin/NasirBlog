@@ -1,6 +1,9 @@
-import { Component } from "@angular/core"
+import { Component, isDevMode } from "@angular/core"
 import { Router } from "@angular/router"
 import { createBlogEntry } from "../Middleware/blog-entry-middleware";
+import { environment } from '../../environments/environment';
+
+
 
 @Component({
   selector : "app-login",
@@ -12,6 +15,8 @@ import { createBlogEntry } from "../Middleware/blog-entry-middleware";
 export class LoginComponent {
   username : string = "";
   password : string = "";
+  BASE_URL : string =  isDevMode() ? environment.BASE_URL : "";
+
   constructor(private router: Router) {}
 
   updateUsername(e : Event) {
@@ -32,7 +37,7 @@ export class LoginComponent {
       password : this.password
     }
 
-    const adminResponse = await fetch("http://localhost:3000/api/admin/authenticate", {
+    const adminResponse = await fetch(`${this.BASE_URL}/api/admin/authenticate`, {
       method : "POST",
       headers : {"Content-Type" : "application/json"},
       credentials : "include",

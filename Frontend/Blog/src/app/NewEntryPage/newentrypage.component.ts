@@ -1,6 +1,7 @@
-import { Component } from "@angular/core"
+import { Component, isDevMode } from "@angular/core"
 import { Router } from "@angular/router"
 import { createBlogEntry } from "../Middleware/blog-entry-middleware";
+import { environment } from '../../environments/environment';
 
 @Component({
   selector : "app-newentrypage",
@@ -13,10 +14,11 @@ export class NewEntryPageComponent {
   title : string = "";
   content : string = "";
   datetime : Date = new Date();
+  BASE_URL : string =  isDevMode() ? environment.BASE_URL : "";
   constructor(private router: Router) {}
 
   async ngOnInit() {
-    const adminResponse = await fetch("http://localhost:3000/api/admin/session", {
+    const adminResponse = await fetch(`${this.BASE_URL}/api/admin/session`, {
       method : "GET",
       headers : {"Content-Type" : "application/json"},
       credentials : "include",
@@ -24,6 +26,7 @@ export class NewEntryPageComponent {
 
     if (!adminResponse.ok) {
       console.log(await adminResponse.json())
+      this.router.navigate(['/login']);
     }
   }
 

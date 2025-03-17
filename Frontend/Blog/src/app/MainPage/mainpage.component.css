@@ -40,12 +40,24 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width : 150px;
-  height : 150px;
   border-radius: 50%;
   border-color: transparent;
   border-width: 0px;
   overflow: hidden;
+}
+
+@media (max-width : 1439px) {
+  .profilePic {
+    width : 50px;
+    height : 50px;
+  }
+}
+
+@media (min-width : 1440px) {
+  .profilePic {
+    width : 150px;
+    height : 150px;
+  }
 }
 
 .profilePic img {
@@ -55,7 +67,6 @@
 }
 
 .BlogEntry {
-  width : 50%;
   min-height : 500px;
   height : fit-content;
   border-color: rgb(215, 215, 215);
@@ -68,8 +79,28 @@
   box-shadow: 12px 12px 12px 12px rgb(0, 0, 0, 0.5);
 }
 
-.BlogEntry p {
-  font-size: 20px;
+@media (max-width : 1439px) {
+  .BlogEntry {
+    width : 70%;
+  }
+}
+
+@media (min-width : 1440px) {
+  .BlogEntry {
+    width : 50%;
+  }
+}
+
+@media (max-width : 1439px) {
+  .BlogEntry p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width : 1440px) {
+  .BlogEntry p {
+    font-size: 20px;
+  }
 }
 
 .BlogEntry h1 {
@@ -77,8 +108,21 @@
 }
 
 .BlogEntryTitle {
-  margin-left: 30px;
   width: 70%;
+}
+
+@media (max-width : 1439px) {
+  .BlogEntry h1 {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width : 1440px) {
+  .BlogEntry h1 {
+    margin-left: 30px;
+    font-size: 40px;
+  }
 }
 
 .hidden {
@@ -145,7 +189,7 @@
 
 .Welcome {
   width : 100%;
-  height : 1080px;
+  height : 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,11 +210,35 @@
 }
 
 .WelcomeContainer h1 {
-  font-size : 100px;
+
   font-family: GlitchFont;
+}
+
+@media (max-width : 1439px) {
+  .WelcomeContainer h1 {
+    font-size : 30px;
+  }
+}
+
+@media (min-width : 1440px) {
+  .WelcomeContainer h1 {
+    font-size : 100px;
+  }
 }
 
 .WelcomeContainer h2 {
   font-size : 30px;
   font-family: GlitchFont;
+}
+
+@media (max-width : 1439px) {
+  .WelcomeContainer h2 {
+    font-size : 15px;
+  }
+}
+
+@media (min-width : 1440px) {
+  .WelcomeContainer h2 {
+    font-size : 30px;
+  }
 }

@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const blog = require('./controller/blog-entry-controller');
 const admin = require('./controller/admin-controller');
 const app = express();
+const path = require('path');
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const cors = require('cors')
 require('dotenv').config();
 
-const port = 3000;
+const port = process.env.PORT || 3000;;
 
 app.use(session({
     secret : process.env.SESSION_SECRET,
@@ -32,15 +33,23 @@ app.use(cors({
     credentials : true
 }))
 
+app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "browser")));
+
+app.use('/api', blog);
+
+app.use('/api', admin)
+
+// Serve React for all non-API routes
+app.get('*', (req, res) => {
+    if (!req.path.startsWith("/api")) {
+        res.sendFile(path.resolve(__dirname, "browser", "index.html"));
+}});
+
 async function main() {
     try {
         await mongoose.connect(process.env.MONGO_URL);
-        
-        app.use(express.json());
-
-        app.use('/api', blog);
-
-        app.use('/api', admin)
 
         app.listen(port, () => {
             console.log("Sever listening on port " + port)
