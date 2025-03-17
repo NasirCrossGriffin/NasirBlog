@@ -1,5 +1,5 @@
 import { Component, ViewChildren, ElementRef, ChangeDetectorRef, QueryList, SimpleChanges, Inject, PLATFORM_ID } from "@angular/core";
-import { CommonModule, isPlatformBrowser } from "@angular/common";
+import { CommonModule, isPlatformBrowser, ViewportScroller  } from "@angular/common";
 import { createBlogEntry, getAllBlogEntries } from "../Middleware/blog-entry-middleware";
 import { RouterModule } from "@angular/router";
 
@@ -18,7 +18,7 @@ export class MainPageComponent {
   @ViewChildren('blogEntry') entryRefs!: QueryList<ElementRef>;
   entryVisibility : any = [];
   observer! : IntersectionObserver;
-  constructor(private cdr: ChangeDetectorRef, @Inject(PLATFORM_ID) private platformId: object) {
+  constructor(private cdr: ChangeDetectorRef, private scroller: ViewportScroller, @Inject(PLATFORM_ID) private platformId: object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -29,6 +29,10 @@ export class MainPageComponent {
     this.cdr.detectChanges();
 
     console.log(this.isBrowser)
+  }
+
+  ngAfterViewInit() {
+    this.scroller.scrollToPosition([0, 0]);
   }
 
   async ngAfterViewChecked() {

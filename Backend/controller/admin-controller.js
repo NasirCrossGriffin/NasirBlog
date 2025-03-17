@@ -50,6 +50,10 @@ router.post('/admin/authenticate', async (req, res) => {
             bcrypt.compare(password, hashedPassword, function(err, result) {
                 console.log(result)
                 if (result === true) {
+                    req.session.admin = {
+                        id : admin.id,
+                        admin_name : admin.admin_name
+                    }
                     return res.status(201).json(admin);
                 } else if (result === false) {
                     return res.status(400).json({ error: "Invalid password" });
@@ -60,6 +64,14 @@ router.post('/admin/authenticate', async (req, res) => {
         }
     } catch (err) {
         return res.status(400).json({ error: err.message });
+    }
+})
+
+router.get('/admin/session', async (req, res) => {
+    if (req.session.admin) {
+        return res.status(201).json(req.session.admin)
+    } else {
+        return res.status(401).json({error: "Not logged in"})
     }
 })
 

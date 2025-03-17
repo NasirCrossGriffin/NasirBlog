@@ -1,0 +1,11 @@
+<div class="LoginPage">
+  <div class="LoginContainer">
+    <div class="LoginFormContainer">
+      <label for="InputUsername">Input a username</label>
+      <input type="text" (change)="updateUsername($event)"/>
+      <label for="InputContent">Input a password</label>
+      <input type="text" (change)="updatePassword($event)"/>
+      <button (click)="submitHandler()">Log In</button>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,18 @@ export class NewEntryPageComponent {
   datetime : Date = new Date();
   constructor(private router: Router) {}
 
+  async ngOnInit() {
+    const adminResponse = await fetch("http://localhost:3000/api/admin/session", {
+      method : "GET",
+      headers : {"Content-Type" : "application/json"},
+      credentials : "include",
+    })
+
+    if (!adminResponse.ok) {
+      console.log(await adminResponse.json())
+    }
+  }
+
   updateTitle(e : Event) {
     var title = (e.target as HTMLInputElement).value;
     console.log(title);
