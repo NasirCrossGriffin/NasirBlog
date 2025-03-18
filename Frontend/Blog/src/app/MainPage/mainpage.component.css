@@ -81,7 +81,7 @@
 
 @media (max-width : 1439px) {
   .BlogEntry {
-    width : 70%;
+    width : 85%;
   }
 }
 
@@ -93,7 +93,7 @@
 
 @media (max-width : 1439px) {
   .BlogEntry p {
-    font-size: 12px;
+    font-size: 20px;
   }
 }
 
@@ -165,10 +165,10 @@
 
 @keyframes fadeInTitle {
   0% {
-    opacity: 0;
+    opacity: 0%;
   }
   100% {
-    opacity: 1;
+    opacity: 100%;
   }
 }
 
@@ -184,7 +184,16 @@
 }
 
 .off-screen {
-  opacity: 0;
+  animation: fade-out 1.2s both;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
 }
 
 .Welcome {
@@ -206,7 +215,6 @@
   align-items: center;
   color : white;
   animation: fadeInTitle 2.0s both;
-  animation: slideUp 0.5s ease-in-out;
 }
 
 .WelcomeContainer h1 {

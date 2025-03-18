@@ -59,7 +59,7 @@ export class MainPageComponent {
             console.log(index, this.entryVisibility[index].visibility);
           }
         });
-      }, { threshold: 0.25 });
+      }, { threshold: 0.50 });
     }
 
     // Start observing the elements

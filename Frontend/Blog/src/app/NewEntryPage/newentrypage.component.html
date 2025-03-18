@@ -1,9 +1,11 @@
 <div class="NewEntryPage">
   <div class="NewEntryContainer">
-    <label for="InputTitle">Input a title</label>
-    <input type="text" (change)="updateTitle($event)"/>
-    <label for="InputContent">Input content</label>
-    <textarea type="text" (change)="updateContent($event)"></textarea>
-    <button (click)="submitHandler()">Post</button>
+    <div class="NewEntryFormContainer">
+      <label for="InputTitle">Input a title</label>
+      <input class="InputTitle" type="text" (change)="updateTitle($event)"/>
+      <label for="InputContent">Input content</label>
+      <textarea class="InputContent" type="text" (change)="updateContent($event)"></textarea>
+      <button (click)="submitHandler()">Post</button>
+    </div>
   </div>
 </div>

@@ -41,6 +41,10 @@ app.use('/api', blog);
 
 app.use('/api', admin)
 
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
 // Serve React for all non-API routes
 app.get('*', (req, res) => {
     if (!req.path.startsWith("/api")) {
