@@ -3,6 +3,11 @@
   src: url('../../assets/fonts/CfGlitchCityRegular-L1vZ.ttf');
 }
 
+@font-face {
+  font-family: PixelatedFont;
+  src: url('../../assets/fonts/PublicPixel-rv0pA.ttf')
+}
+
 .NoBlogPosts {
   width : 100%;
   height : 100%;
@@ -75,7 +80,7 @@
   border-style: solid;
   padding: 10px 10px 10px 10px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   box-shadow: 12px 12px 12px 12px rgb(0, 0, 0, 0.5);
 }
 
@@ -248,5 +253,64 @@
 @media (min-width : 1440px) {
   .WelcomeContainer h2 {
     font-size : 30px;
+  }
+}
+
+.PageMarkers {
+  position: fixed;
+  width : 100vw;
+  height : 100vh;
+  top : 0;
+  left : 0;
+}
+
+.ScrollDown {
+  position: absolute;
+  color : white;
+  bottom : 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.WebsiteLink {
+  position: fixed;
+  right: 0;
+  top : 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color: white;
+  animation: fadeInTitle 2.0s both;
+}
+
+.WebsiteLink a {
+  color: white;
+  font-family: GlitchFont;
+  text-decoration: none;
+}
+
+.GriffinContainer {
+  width: 100px;
+  height: 100px;
+}
+
+.GriffinContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px) translateX(-50%);
+  } 33% {
+    transform: translateY(-20px) translateX(-50%);
+  } 66% {
+    transform: translateY(10px) translateX(-50%);
+  } 100% {
+    transform: translateY(0px) translateX(-50%);
   }
 }

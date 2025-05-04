@@ -24,6 +24,7 @@ export class MainPageComponent {
 
   async ngOnInit() {
     this.blogEntries = await getAllBlogEntries();
+    this.reformatDates();
     console.log("Fetched blog entries:", this.blogEntries);
 
     this.cdr.detectChanges();
@@ -63,11 +64,25 @@ export class MainPageComponent {
     }
 
     // Start observing the elements
-    this.entryRefs.toArray().forEach((entryRef) => {
-      this.observer.observe(entryRef.nativeElement);
-    });
+    if (this.entryRefs.length > 0 && this.observer && this.isBrowser) {
+        this.entryRefs.toArray().forEach((entryRef) => {
+        this.observer.observe(entryRef.nativeElement);
+      });
+    }
 
     console.log(this.observer); // Check the observer
   }
 
+  reformatDates() {
+    this.blogEntries.forEach((entry : any) => {
+      var entryDate = new Date(entry.datetime)
+      var entryYear = entryDate.getFullYear();
+      var entryMonth = entryDate.getMonth();
+      var entryDay = entryDate.getDay();
+
+      var dateStrings = [entryMonth.toString().padStart(2, '0'), entryDay.toString().padStart(2, '0'), entryYear.toString()];
+      var dateString = dateStrings.join("/");
+      entry.datetime = dateString;
+    })
+  }
 }

@@ -2,7 +2,16 @@
   <div class="WelcomeContainer">
     <h1>NASIR GRIFFIN</h1>
     <h2>WELCOME TO MY BLOG</h2>
-    <h2>SCROLL DOWN TO VIEW CONTENT</h2>
+  </div>
+</div>
+
+<div class="PageMarkers">
+  <h2 class="ScrollDown" [style.font-family]="'PixelatedFont'">SCROLL DOWN ↓</h2>
+  <div class="WebsiteLink">
+    <a href="https://nasirportfoliosite-0de8f53566bf.herokuapp.com">PORTFOLIO</a>
+    <div class="GriffinContainer">
+      <img src="/pngimg.com - griffin_PNG48.png"/>
+    </div>
   </div>
 </div>
 
@@ -15,7 +24,7 @@
         </div>
         <h1 class="BlogEntryTitle">{{blogEntry.title}}</h1>
       </div>
-      <p class="BlogEntryDate">{{blogEntry.datetime}}</p>
+      <p class="BlogEntryDate" [style.font-weight]="'bold'" [style.font-size]="'30px'">{{blogEntry.datetime}}</p>
       <p class="BlogEntryContent">{{blogEntry.content}}</p>
     </div>
   </div>
