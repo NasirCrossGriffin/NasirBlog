@@ -78,7 +78,7 @@ export class MainPageComponent {
       var entryDate = new Date(entry.datetime)
       var entryYear = entryDate.getFullYear();
       var entryMonth = entryDate.getMonth();
-      var entryDay = entryDate.getDay();
+      var entryDay = entryDate.getDate();
 
       var dateStrings = [entryMonth.toString().padStart(2, '0'), entryDay.toString().padStart(2, '0'), entryYear.toString()];
       var dateString = dateStrings.join("/");
